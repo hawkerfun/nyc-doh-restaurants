@@ -19,6 +19,7 @@ phases:
       - npm install
       - npm run-script build-deploy
       - cd ../
+      - aws s3 cp s3://aws-codestar-us-east-1-363614408566-nyc-doh-restaur-pipe/env.js env/env.js
       - npm test
   post_build:
     commands:
