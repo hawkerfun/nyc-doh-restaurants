@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {RestaurantDbService} from '../core/services/restaurant-db.service';
+import {MatPaginator} from '@angular/material';
 
 export interface PeriodicElement {
   name: string;
@@ -33,6 +34,7 @@ export class TableSearchComponent implements OnInit {
   dataSource = [];
   searchRestaurantType = '';
   orderBy = 'SCORE';
+  @ViewChild(MatPaginator) paginator: MatPaginator
 
   length = 100;
   pageSize = 20;
@@ -50,6 +52,11 @@ export class TableSearchComponent implements OnInit {
     const pageIndex = $event.pageIndex;
     const pageSize = $event.pageSize;
     this.getRestaurants(pageIndex*pageSize);
+  }
+
+  executeSearch() {
+    this.paginator.pageIndex = 0; 
+    this.getRestaurants(0)
   }
 
   getRestaurants(pageIndex) {
