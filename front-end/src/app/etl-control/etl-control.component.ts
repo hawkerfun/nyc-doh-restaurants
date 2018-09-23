@@ -11,6 +11,7 @@ export class EtlControlComponent implements OnInit {
 
   etlRunnerStatus: String;
   isEtlJobRunning: Boolean;
+  telProceedeLines: 0;
 
   constructor(public _etlServiceService: EtlServiceService) { 
   
@@ -19,11 +20,21 @@ export class EtlControlComponent implements OnInit {
   ngOnInit() {
     this.etlRunnerStatus = 'stopped';
     this.isEtlJobRunning = false;
+    this.telProceedeLines = 0;
     this.getEtlStatus();
   }
 
-  logMessage() {
-    console.log('Hi');
+  startPollProccedeLines() {
+    setTimeout(() => {
+      this._etlServiceService.getCountOfProccededLines()
+        .then((data: any) => {
+          this.telProceedeLines = data.telProceedeLines;
+          if(this.etlRunnerStatus == 'stared') {
+            this.startPollProccedeLines();  
+          }
+        })
+    }, 1500);
+    
   }//
 
   setStoppedState() {
@@ -35,6 +46,7 @@ export class EtlControlComponent implements OnInit {
     this.etlRunnerStatus = 'stared';
     this.isEtlJobRunning = true;
     this.isCompletedEtl();
+    this.startPollProccedeLines();
   }
 
   getEtlStatus() {
@@ -58,13 +70,11 @@ export class EtlControlComponent implements OnInit {
     this._etlServiceService.isCompletedEtl()
       .then(() => {
         console.log('Changed');
-        this.etlRunnerStatus = 'stopped';
-        this.isEtlJobRunning = false;
+        this.setStoppedState();
       })
       .catch(() => {
         console.log('Changed with Error');
-        this.etlRunnerStatus = 'stopped';
-        this.isEtlJobRunning = false;
+        this.setStoppedState();
       }) 
   }
 
@@ -73,15 +83,10 @@ export class EtlControlComponent implements OnInit {
     this._etlServiceService.startEtl()
       .then(() => {
         console.log('Changed');
-        this.etlRunnerStatus = 'stared';
-        this.isEtlJobRunning = true;
-        this.isCompletedEtl();
+        this.setRunningState(); 
       })
       .catch(() => {
         console.log('Changed with Error');
-        this.etlRunnerStatus = 'stared';
-        this.isEtlJobRunning = true;
-        this.isCompletedEtl();
       })
   }
 
@@ -90,13 +95,11 @@ export class EtlControlComponent implements OnInit {
     this._etlServiceService.stopEtl()
       .then(() => {
         console.log('Changed');
-        this.etlRunnerStatus = 'stopped';
-        this.isEtlJobRunning = false;
+        this.setStoppedState();
       })
       .catch(() => {
         console.log('Changed with Error');
-        this.etlRunnerStatus = 'stopped';
-        this.isEtlJobRunning = false;
+        this.setStoppedState();
       })
   }
 

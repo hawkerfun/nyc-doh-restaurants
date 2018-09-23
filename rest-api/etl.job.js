@@ -12,14 +12,21 @@ module.exports.etlJob = () => {
 
     const start = () => {
 
-        ETL.startJob(5000, (restaurantsInserts, violationInserts, inspectionInserts) => {
-            let promises = [];
+        Q.allSettled([
+            RestauransDB.truncateViolations(),
+            RestauransDB.truncateRest(),
+            RestauransDB.truncateInspections()    
+        ]).then(() => {
 
-            promises.push(RestauransDB.insertResturants(restaurantsInserts));    
-            promises.push(RestauransDB.insertInspections(inspectionInserts));   
-            promises.push(RestauransDB.insertViolations(violationInserts));
-            
-            return Q.allSettled(promises);  
+            ETL.startJob(5000, (restaurantsInserts, violationInserts, inspectionInserts) => {
+                let promises = [];
+    
+                promises.push(RestauransDB.insertResturants(restaurantsInserts));    
+                promises.push(RestauransDB.insertInspections(inspectionInserts));   
+                promises.push(RestauransDB.insertViolations(violationInserts));
+                
+                return Q.allSettled(promises);  
+            });
         });
 
         return true;
@@ -32,6 +39,7 @@ module.exports.etlJob = () => {
     return {
         start: start,
         stop: stop,
+        getProceedeLines: () => ETL.getProceedeLines(),
         getStatus: () => ETL.getStatus()
     }
 

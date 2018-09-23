@@ -196,6 +196,10 @@ module.exports = () => {
             this.stream.destroy();    
         }
 
+        getProceedeLines() {
+            return this.linesTransformed;
+        }
+
 
     }
     

@@ -10,7 +10,8 @@ import {
   MatTableModule,
   MatProgressSpinnerModule,
   MatInputModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatSelectModule
 } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import 'hammerjs';
@@ -36,7 +37,8 @@ import { EtlControlComponent } from './etl-control/etl-control.component';
     HttpClientModule,
     MatInputModule,
     FormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule
   ],
   providers: [
     HttpClient

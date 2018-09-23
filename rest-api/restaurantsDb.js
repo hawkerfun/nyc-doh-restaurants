@@ -8,18 +8,13 @@ module.exports.Restaurants = () => {
 
     const RestauransDB = new RestaurantDB(APP_CONF.DB_CONF);
 
-    const getRestaturantsByType = (restaurantType) => {
+    const getRestaturants = (restaurantType, pageIndex, orderBy) => {
 
-        return RestauransDB.getRestaturantsByType(restaurantType, 0, 20);
-    }
-
-    const getRestaturants = (pageIndex) => {
-        return RestauransDB.getRestaturants(pageIndex, 20);
+        return RestauransDB.getRestaturants(restaurantType, pageIndex, 20, orderBy);
     }
 
     return {
-        getRestaturants: getRestaturants,
-        getRestaturantsByType: getRestaturantsByType
+        getRestaturants: getRestaturants
     }
 
 }

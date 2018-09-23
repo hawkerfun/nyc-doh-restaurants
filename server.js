@@ -19,7 +19,7 @@ app.get('/run-etl', function (req, res) {
 
     etlJob = etlJobClass();
     etlJob.start();
-    res.send('Etl job started');
+    res.send({message:'Etl job started'});
 });
 
 app.get('/stop-etl', function (req, res) {
@@ -47,25 +47,15 @@ app.get('/iscompleted-etl', function (req, res) {
 
 });
 
-app.get('/get-thai-restaurants', function (req, res) {
-    const restaurantType = req.query.type;
-    Restaurants.getRestaturantsByType(restaurantType)
-        .then((data) => {
-            //console.log(data);
-            res.send({restaurants: data});
-        })
-        .catch((err) => {
-            console.log(err);
-            res.send({message: err});   
-        })
-
-
-});
-
+app.get('/count-proceeded-lines-etl', function(req, res) {
+    res.send({telProceedeLines: etlJob.getProceedeLines()});        
+})
 
 app.get('/get-restaurants', function (req, res) {
-    const pageIndex = req.query.pageIndex;
-    Restaurants.getRestaturants(pageIndex)
+    const restaurantType = req.query.type || '';
+    const pageIndex = req.query.pageIndex || 0;
+    const orderBy = req.query.orderBy || 'SCORE';
+    Restaurants.getRestaturants(restaurantType, pageIndex, orderBy)
         .then((data) => {
             //console.log(data);
             res.send({restaurants: data});

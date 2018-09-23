@@ -11,13 +11,8 @@ export class RestaurantDbService {
     console.log('RestaurantDbService Initialized');
   }
 
-  getThaiRestaurants(searchRestaurantType) {
-    console.log(searchRestaurantType);
-    return this.httpClient.get(`${environment.apiConf.url}/get-thai-restaurants?type=${searchRestaurantType}`).toPromise();
-  }
-
-  getRestaurants(pageIndex) {
+  getRestaurants(searchRestaurantType, pageIndex, orderBy) {
     console.log('getRestaurants');
-    return this.httpClient.get(`${environment.apiConf.url}/get-restaurants?pageIndex=${pageIndex}`).toPromise();
+    return this.httpClient.get(`${environment.apiConf.url}/get-restaurants?type=${searchRestaurantType}&pageIndex=${pageIndex}&orderBy=${orderBy}`).toPromise();
   }
 }
