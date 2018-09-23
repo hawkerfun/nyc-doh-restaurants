@@ -32,12 +32,16 @@ export class TableSearchComponent implements OnInit {
   displayedColumns: string[] = ['DBA', 'GRADE', 'SCORE', 'BUILDING', 'STREET', 'BORO', 'ZIPCODE', 'PHONE', 'GRADE_DATE'];
   dataSource = [];
   searchRestaurantType: String;
+
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
   
   constructor(private _RestaurantDbService: RestaurantDbService) { }
 
   ngOnInit() {
   
-  this.getRestaurants();
+  this.getRestaurants(0);
   }
 
   setNewDataSource () {
@@ -54,6 +58,12 @@ export class TableSearchComponent implements OnInit {
     },*/
   }
 
+  pullNewDataBatch($event) {
+    const pageIndex = $event.pageIndex;
+    const pageSize = $event.pageSize;
+    this.getRestaurants(pageIndex*pageSize);
+  }
+
   getThaiRestaurants() {
     console.log('Get Thai Restaurants');
     console.log(this.searchRestaurantType);
@@ -67,9 +77,9 @@ export class TableSearchComponent implements OnInit {
       })
   }
 
-  getRestaurants() {
+  getRestaurants(pageIndex) {
     console.log('Get Restaurants');
-    this._RestaurantDbService.getRestaurants()
+    this._RestaurantDbService.getRestaurants(pageIndex)
       .then((data: any) => {
         console.log(data);
         this.dataSource = data.restaurants;

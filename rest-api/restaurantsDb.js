@@ -13,8 +13,8 @@ module.exports.Restaurants = () => {
         return RestauransDB.getRestaturantsByType(restaurantType, 0, 20);
     }
 
-    const getRestaturants = () => {
-        return RestauransDB.getRestaturants(0, 20);
+    const getRestaturants = (pageIndex) => {
+        return RestauransDB.getRestaturants(pageIndex, 20);
     }
 
     return {

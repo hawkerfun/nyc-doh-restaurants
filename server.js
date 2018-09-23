@@ -64,7 +64,8 @@ app.get('/get-thai-restaurants', function (req, res) {
 
 
 app.get('/get-restaurants', function (req, res) {
-    Restaurants.getRestaturants()
+    const pageIndex = req.query.pageIndex;
+    Restaurants.getRestaturants(pageIndex)
         .then((data) => {
             //console.log(data);
             res.send({restaurants: data});

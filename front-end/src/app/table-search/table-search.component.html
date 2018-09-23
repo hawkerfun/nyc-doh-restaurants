@@ -67,6 +67,11 @@
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
+            <mat-paginator [length]="500000"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25]"
+              (page)="pullNewDataBatch($event)">
+            </mat-paginator>
           </div>
         </div>
       </section>
