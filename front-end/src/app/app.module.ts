@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import {
   MatButtonModule, 
   MatToolbarModule,
   MatTableModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatInputModule
 } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import 'hammerjs';
@@ -30,7 +32,9 @@ import { EtlControlComponent } from './etl-control/etl-control.component';
     MatIconModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [
     HttpClient

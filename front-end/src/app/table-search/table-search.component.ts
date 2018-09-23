@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RestaurantDbService} from '../core/services/restaurant-db.service';
 
 export interface PeriodicElement {
   name: string;
@@ -23,16 +24,59 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-table-search',
   templateUrl: './table-search.component.html',
-  styleUrls: ['./table-search.component.css']
+  styleUrls: ['./table-search.component.css'],
+  providers:[RestaurantDbService]
 })
 export class TableSearchComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['DBA', 'GRADE', 'SCORE', 'BUILDING', 'STREET', 'BORO', 'ZIPCODE', 'PHONE', 'GRADE_DATE'];
+  dataSource = [];
+  searchRestaurantType: String;
   
-  constructor() { }
+  constructor(private _RestaurantDbService: RestaurantDbService) { }
 
   ngOnInit() {
+  
+  this.getRestaurants();
+  }
+
+  setNewDataSource () {
+    /*{
+      DBA: "LE VIET CAFE",
+      BUILDING: "1750",
+      STREET: "2ND AVE",
+      BORO: "MANHATTAN",
+      ZIPCODE: "10128",
+      PHONE: "9173883897",
+      GRADE: "B",
+      SCORE: 27,
+      GRADE_DATE: "07/12/2017"
+    },*/
+  }
+
+  getThaiRestaurants() {
+    console.log('Get Thai Restaurants');
+    console.log(this.searchRestaurantType);
+    this._RestaurantDbService.getThaiRestaurants(this.searchRestaurantType)
+      .then((data: any) => {
+        console.log(data);
+        this.dataSource = data.restaurants;
+      })
+      .catch(err => {
+
+      })
+  }
+
+  getRestaurants() {
+    console.log('Get Restaurants');
+    this._RestaurantDbService.getRestaurants()
+      .then((data: any) => {
+        console.log(data);
+        this.dataSource = data.restaurants;
+      })
+      .catch(err => {
+
+      })
   }
 
 }

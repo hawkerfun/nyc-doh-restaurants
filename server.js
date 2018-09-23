@@ -1,9 +1,11 @@
 var express = require('express');
 var port = process.env.PORT || 3000;
+var url = require('url')
 var app = express(),
 path = require('path'),
 publicDir = path.join(__dirname,'public/dist/front-end');
 
+var Restaurants = require('./rest-api/restaurantsDb').Restaurants();
 var etlJobClass = require('./rest-api/etl.job').etlJob;
 var etlJob = etlJobClass();
 
@@ -16,8 +18,7 @@ app.get('/run-etl', function (req, res) {
     }
 
     etlJob = etlJobClass();
-
-    runner = etlJob.start();
+    etlJob.start();
     res.send('Etl job started');
 });
 
@@ -43,6 +44,36 @@ app.get('/iscompleted-etl', function (req, res) {
     }
 
     longPoll();
+
+});
+
+app.get('/get-thai-restaurants', function (req, res) {
+    const restaurantType = req.query.type;
+    Restaurants.getRestaturantsByType(restaurantType)
+        .then((data) => {
+            //console.log(data);
+            res.send({restaurants: data});
+        })
+        .catch((err) => {
+            console.log(err);
+            res.send({message: err});   
+        })
+
+
+});
+
+
+app.get('/get-restaurants', function (req, res) {
+    Restaurants.getRestaturants()
+        .then((data) => {
+            //console.log(data);
+            res.send({restaurants: data});
+        })
+        .catch((err) => {
+            console.log(err);
+            res.send({message: err});   
+        })
+
 
 });
 
