@@ -1,38 +1,38 @@
-Welcome to the AWS CodeStar sample web application
+Welcome to ETL Solution for NYC DOH Restaurants
 ==================================================
 
-This sample code helps get you started with a simple Express web application
-deployed by AWS Elastic Beanstalk and AWS CloudFormation.
+This project is build regarding Inteview task ETL Job and Search in proceeded data of NYC DOH Restaurants.
+
+NOTE: Pardon for typos.
+
+What's Technologies Behind
+----------
+This project was build by using folowing technologies:
+
+* Node.js, Express - as back-end service and ETL Job runner
+* Angular 6 - as Front-end
+* AWS RDS MySQL - as Data store
+* AWS CodeBuild - as CI tool for Continues Delivery [file: buildspec.yml]
+* AWS CodePipeLine - as CI Archistration tool for Continueus Delivery
+* AWS BeanStalk - as Application host service [file: template.yml]
+
 
 What's Here
 -----------
-
-This sample includes:
-
-* README.md - this file
 * .ebextensions/ - this directory contains the configuration files that
-  AWS Elastic Beanstalk will deploy your Express application
+  AWS Elastic Beanstalk will deploy
 * buildspec.yml - this file is used by AWS CodeBuild to package your project.
 * package.json - this file contains various metadata relevant to your Node.js
   application such as dependencies
-* server.js - this file contains the code for your application
-* public/ - this directory contains static web assets used by your application
-* tests/ - this directory contains unit tests for your application
+* server.js - this file contains the code for your Express application
+* public/ - this directory contains compiled Angular App
+* tests/ - this directory contains unit tests
 * template.yml - this file contains the description of AWS resources used by AWS
   CloudFormation to deploy your infrastructure
 
 
-Getting Started
+Start Locally
 ---------------
-
-These directions assume you want to develop on your local computer, and not
-from the Amazon EC2 instance itself. If you're on the Amazon EC2 instance, the
-virtual environment is already set up for you, and you can start working on the
-code.
-
-To work on the sample code, you'll need to clone your project's repository to your
-local computer. If you haven't, do that first. You can find instructions in the
-AWS CodeStar user guide.
 
 1. Install Node.js on your computer.  For details on available installers visit
    https://nodejs.org/en/download/.
@@ -41,58 +41,118 @@ AWS CodeStar user guide.
 
         $ npm install
 
-3. Start the development server:
+3. Build Front-End Application:
 
-        $ node server.js
+        $ npm run-script build-front-end
 
-4. Open http://127.0.0.1:3000/ in a web browser to view your application.
+4. Start the development server:
 
-What Do I Do Next?
+        $ npm start        
+
+5. Open http://127.0.0.1:3000/ in a web browser to view your application.
+
+Solutions
 ------------------
 
-Once you have a virtual environment running, you can start making changes to
-the sample Express web application. We suggest making a small change to
-/public/index.html first, so you can see how changes pushed to your project's
-repository are automatically picked up and deployed to the Amazon EC2 instance
-by AWS Elastic Beanstalk. (You can watch the progress on your project dashboard.)
-Once you've seen how that works, start developing your own code, and have fun!
+### *Implemented Solution*
 
-To run your tests locally, go to the root directory of the
-sample code and run the `npm test` command, which
-AWS CodeBuild also runs through your `buildspec.yml` file.
+This ptoject was build by following below architecture:
+![AWS_ETL_Solution](https://s3.amazonaws.com/aws-codestar-us-east-1-363614408566-nyc-doh-restaur-pipe/architecture/AWS_ETL_Solution.png)
 
-To test your new code during the release process, modify the existing tests or
-add tests to the tests directory. AWS CodeBuild will run the tests during the
-build stage of your project pipeline. You can find the test results
-in the AWS CodeBuild console.
+The point of this task is to examinate skills of wed development, that solution was selected since it requires build ETL job from scratch. This architecture contans EC2 instance that host NodeJs app and RDS MySQL data store for procedded data. 
 
-Learn more about AWS CodeBuild and how it builds and tests your application here:
-https://docs.aws.amazon.com/codebuild/latest/userguide/concepts.html
+### *DataBase Schema*
+For data store there were selected AWS RDS service with MySQL server. [db.t2.micro]
 
-Learn more about AWS CodeStar by reading the user guide.  Ask questions or make
-suggestions on our forum.
+The Database schema is following:
+![DB_Schema](https://s3.amazonaws.com/aws-codestar-us-east-1-363614408566-nyc-doh-restaur-pipe/architecture/DB_schema.png)
 
-User Guide: http://docs.aws.amazon.com/codestar/latest/userguide/welcome.html
+* Restaurants Table contains all unique restaurants info, such as Name[DBA], Unique ID [CAMIS], Address data and Phone. 
+* Inspections Tbale contains all information regarding inspections, such as Grade, Score, Dates, Violation Codes. It contains all inspections, so we can build the history of inspections, since each inspection is related to Restaturants table through `CAMIS` field. So it One[Restaurants] to Many[Inspections] relationship
+* Violations Table contains all information regarding violation information. It place as a separe table for Inspections table optimization and remove data duplication. It has One[Violations] to Many[Inspections] relationship.
 
-Forum: https://forums.aws.amazon.com/forum.jspa?forumID=248
+###### Top 10 Thai restaurants SQL query
 
-How Do I Add Template Resources to My Project?
-------------------
+In order to get all top 10 Thai restarants from Database, we can execute this equery. 
 
-To add AWS resources to your project, you'll need to edit the `template.yml`
-file in your project's repository. You may also need to modify permissions for
-your project's worker roles. After you push the template change, AWS CodeStar
-and AWS CloudFormation provision the resources for you.
+```
+select Rest.DBA, Rest.BUILDING, Rest.STREET, Rest.BORO, Rest.ZIPCODE, Rest.PHONE, Inspection.GRADE, Inspection.SCORE, Inspection.GRADE_DATE 
+FROM  Rest
 
-See the AWS CodeStar user guide for instructions to modify your template:
-https://docs.aws.amazon.com/codestar/latest/userguide/how-to-change-project#customize-project-template.html
+Left Join Inspection
+ON Inspection.CAMIS = Rest.CAMIS
 
-What Should I Do Before Running My Project in Production?
-------------------
+WHERE Rest.CUISINE_DESCRIPTION = 'Thai' AND Inspection.id IN
+(SELECT id FROM Inspection WHERE Inspection.GRADE <= 'B' AND Inspection.GRADE <> ' ' AND Inspection.GRADE_DATE <> ' ' GROUP BY Inspection.CAMIS Order by Inspection.GRADE_DATE DESC)
 
-AWS recommends you review the security best practices recommended by the framework
-author of your selected sample application before running it in production. You
-should also regularly review and apply any available patches or associated security
-advisories for dependencies used within your application.
+GROUP BY Rest.CAMIS
 
-Best Practices: https://docs.aws.amazon.com/codestar/latest/userguide/best-practices.html?icmpid=docs_acs_rm_sec
+Order by Inspection.SCORE DESC
+
+LIMIT 0, 10;
+```
+
+**However you can test this queries on Front-End App with diferent parameters**
+
+For example type `Thai` or `Pizza` or `American` or `Russian` for Restaurant type. 
+
+### *CI PipeLine and Monitoring*
+
+This application is hosted by AWS Elastic BeanStalk and uses AWS CodeBuild for run all Unit Tests and AWS CodeDeploy for deploy archistration.
+
+![CodeDeployScreen.png](https://s3.amazonaws.com/aws-codestar-us-east-1-363614408566-nyc-doh-restaur-pipe/architecture/CodeDeployScreen.png)
+
+### *Alternative Solutions*
+
+###### Serverless solution with AWS Glue
+
+As alternative solution we can use AWS Glue service as ETL job worker, that will analyze csv file, generate ETL job code and will host ETL Job process. For data store was selected AWS DynamoDb with global secondary index on properties for optimized serch queries
+![AWS_ETL_Solution](https://s3.amazonaws.com/aws-codestar-us-east-1-363614408566-nyc-doh-restaur-pipe/architecture/AWS_Glue_ETL_Solution.png)
+
+###### Serverless solution without AWS Glue
+
+Alternative solution 2 is different from previous by removing AWS Glue service. Etl job runner is designed by microservice using Lambda Functions. Since Lambda will be hostin ETL proccess, it will require long execution time for lamdas (which is coast effective) and will require to incrise Write Copacity Units for DynamoDB table, that will increase price for DynamoDB.  
+
+![AWS_ETL_Solution](https://s3.amazonaws.com/aws-codestar-us-east-1-363614408566-nyc-doh-restaur-pipe/architecture/AWS_ETL_Solution_Serverless.png)
+
+If this architecture will be implemented with DynamoDB table, by folowing schema
+```
+  Restaurants:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Restaurants
+      AttributeDefinitions:
+        - AttributeName: ID
+          AttributeType: S
+        - AttributeName: CUISINE_DESCRIPTION
+          AttributeType: S
+        - AttributeName: GRADE
+          AttributeType: S 
+        - AttributeName: SCORE
+          AttributeType: N          
+      KeySchema:
+        - AttributeName: ID
+          KeyType: HASH
+        - AttributeName: SCORE
+          KeyType: RANGE  
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1700
+      GlobalSecondaryIndexes: 
+        - 
+          IndexName: "RestaurantTypeIndex"
+          KeySchema: 
+            - 
+              AttributeName: "CUISINE_DESCRIPTION"
+              KeyType: "HASH"
+            - 
+              AttributeName: "GRADE"
+              KeyType: "RANGE"
+          Projection: 
+            ProjectionType: "ALL"
+          ProvisionedThroughput: 
+            ReadCapacityUnits: "1"
+            WriteCapacityUnits: "200" 
+```
+The table will allow to make write request for 1700 per second, which will take around 5 minutes for 500K item inserts. The price for this table will be `$919.04 / month` which is `$0.25` per each $500k inserts. So that's wy this solution doesn't worth implementation.
+

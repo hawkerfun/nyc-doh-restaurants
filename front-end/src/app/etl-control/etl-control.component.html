@@ -6,7 +6,7 @@
     <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
       <div class="mdl-card__supporting-text">
         <h4>ETL Runner</h4>
-        If you want to start new ETL Job pleas click start. Note: It will trunckate all tables. 
+        If you want to start new ETL Job pleas click start. Note: It will trunckate all tables. It uses LongPolling aproach to get status updates. ETL Job Runner inserts 5000 items bacthes into DataBase
       </div>
       <div class="mdl-card__actions button-row">
           <button mat-raised-button color="primary" (click)="startEtlRunner()" *ngIf="!isEtlJobRunning">Start ETL Job</button>

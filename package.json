@@ -19,6 +19,7 @@
     },
     "scripts": {
         "start": "node server.js",
+        "build-front-end": "rm -rf public/dist && cd front-end && npm install && npm run-script build-dev",
         "test": "mocha --recursive tests --exit"
     }
 }
