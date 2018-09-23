@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {RestaurantDbService} from '../core/services/restaurant-db.service';
+import {MatPaginator} from '@angular/material';
 
 export interface PeriodicElement {
   name: string;
@@ -23,16 +25,50 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-table-search',
   templateUrl: './table-search.component.html',
-  styleUrls: ['./table-search.component.css']
+  styleUrls: ['./table-search.component.css'],
+  providers:[RestaurantDbService]
 })
 export class TableSearchComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['DBA', 'GRADE', 'SCORE', 'BUILDING', 'STREET', 'BORO', 'ZIPCODE', 'PHONE', 'GRADE_DATE'];
+  dataSource = [];
+  searchRestaurantType = '';
+  orderBy = 'SCORE';
+  @ViewChild(MatPaginator) paginator: MatPaginator
+
+  length = 100;
+  pageSize = 20;
+  pageSizeOptions: number[] = [5, 10, 20, 100];
   
-  constructor() { }
+  constructor(private _RestaurantDbService: RestaurantDbService) { }
 
   ngOnInit() {
+  
+    this.getRestaurants(0);
+
+  }
+
+  pullNewDataBatch($event) {
+    const pageIndex = $event.pageIndex;
+    const pageSize = $event.pageSize;
+    this.getRestaurants(pageIndex*pageSize);
+  }
+
+  executeSearch() {
+    this.paginator.pageIndex = 0; 
+    this.getRestaurants(0)
+  }
+
+  getRestaurants(pageIndex) {
+    console.log('Get Restaurants');
+    this._RestaurantDbService.getRestaurants(this.searchRestaurantType, pageIndex, this.orderBy)
+      .then((data: any) => {
+        console.log(data);
+        this.dataSource = data.restaurants;
+      })
+      .catch(err => {
+
+      })
   }
 
 }

@@ -41,7 +41,7 @@ module.exports = ".mat-elevation-z0{box-shadow:0 0 0 0 rgba(0,0,0,.2),0 0 0 0 rg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n    <header class=\"mdl-layout__header mdl-layout__header--scroll mdl-color--primary\">\n      <div class=\"mdl-layout--large-screen-only mdl-layout__header-row\">\n      </div>\n      <div class=\"mdl-layout--large-screen-only mdl-layout__header-row\"> \n          <mat-icon style=\"vertical-align: middle; margin: 0 44px 17px 0; font-size: 44px;\">assistant</mat-icon><h3>NYC DOH Restaturants Processor</h3>\n      </div>\n      <div class=\"mdl-layout--large-screen-only mdl-layout__header-row\">\n      </div>\n      <div class=\"mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark\">\n        <a href=\"#overview\" class=\"mdl-layout__tab is-active\">Overview</a>\n        <a href=\"#features\" class=\"mdl-layout__tab\">Chart</a>\n        <a href=\"#features\" class=\"mdl-layout__tab\">Details</a>\n        <a href=\"#features\" class=\"mdl-layout__tab\">Technology</a>\n        <a href=\"#features\" class=\"mdl-layout__tab\">FAQ</a>\n        <!--<button class=\"mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent\" id=\"add\">\n          <i class=\"material-icons\" role=\"presentation\">add</i>\n          <span class=\"visuallyhidden\">Add</span>\n        </button>-->\n      </div>\n    </header>\n    <main class=\"mdl-layout__content\">\n      <div class=\"mdl-layout__tab-panel is-active\" id=\"overview\">\n        <section class=\"section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp\">\n          <app-etl-control></app-etl-control>\n        </section>\n\n        <!-- Search Details -->\n        <section class=\"section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp\">\n          <app-table-search></app-table-search>\n        </section>\n        <!--<section class=\"section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp\">\n          <div class=\"mdl-card mdl-cell mdl-cell--12-col\">\n            <div class=\"mdl-card__supporting-text\">\n              <h4>Technology</h4>\n              Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.\n            </div>\n            <div class=\"mdl-card__actions\">\n              <a href=\"#\" class=\"mdl-button\">Read our features</a>\n            </div>\n          </div>\n          <button class=\"mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon\" id=\"btn3\">\n            <i class=\"material-icons\">more_vert</i>\n          </button>\n          <ul class=\"mdl-menu mdl-js-menu mdl-menu--bottom-right\" for=\"btn3\">\n            <li class=\"mdl-menu__item\">Lorem</li>\n            <li class=\"mdl-menu__item\" disabled>Ipsum</li>\n            <li class=\"mdl-menu__item\">Dolor</li>\n          </ul>\n        </section>\n        <section class=\"section--footer mdl-color--white mdl-grid\">\n          <div class=\"section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone\">\n            <div class=\"section__circle-container__circle mdl-color--accent section__circle--big\"></div>\n          </div>\n          <div class=\"section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone\">\n            <h5>Lorem ipsum dolor sit amet</h5>\n            Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.\n          </div>\n          <div class=\"section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone\">\n            <div class=\"section__circle-container__circle mdl-color--accent section__circle--big\"></div>\n          </div>\n          <div class=\"section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone\">\n            <h5>Lorem ipsum dolor sit amet</h5>\n            Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.\n          </div>\n        </section>-->\n      </div>\n      <div class=\"mdl-layout__tab-panel\" id=\"features\">\n        <section class=\"section--center mdl-grid mdl-grid--no-spacing\">\n          <div class=\"mdl-cell mdl-cell--12-col\">\n            <h4>Features</h4>\n            Minim duis incididunt est cillum est ex occaecat consectetur. Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.\n            <ul class=\"toc\">\n              <h4>Contents</h4>\n              <a href=\"#lorem1\">Lorem ipsum</a>\n              <a href=\"#lorem2\">Lorem ipsum</a>\n              <a href=\"#lorem3\">Lorem ipsum</a>\n              <a href=\"#lorem4\">Lorem ipsum</a>\n              <a href=\"#lorem5\">Lorem ipsum</a>\n            </ul>\n\n            <h5 id=\"lorem1\">Lorem ipsum dolor sit amet</h5>\n            Excepteur et pariatur officia veniam anim culpa cupidatat consequat ad velit culpa est non.\n            <ul>\n              <li>Nisi qui nisi duis commodo duis reprehenderit consequat velit aliquip.</li>\n              <li>Dolor consectetur incididunt in ipsum laborum non et irure pariatur excepteur anim occaecat officia sint.</li>\n              <li>Lorem labore proident officia excepteur do.</li>\n            </ul>\n\n            <p>\n              Sit qui est voluptate proident minim cillum in aliquip cupidatat labore pariatur id tempor id. Proident occaecat occaecat sint mollit tempor duis dolor cillum anim. Dolore sunt ea mollit fugiat in aliqua consequat nostrud aliqua ut irure in dolore. Proident aliqua culpa sint sint exercitation. Non proident occaecat reprehenderit veniam et proident dolor id culpa ea tempor do dolor. Nulla adipisicing qui fugiat id dolor. Nostrud magna voluptate irure veniam veniam labore ipsum deserunt adipisicing laboris amet eu irure. Sunt dolore nisi velit sit id. Nostrud voluptate labore proident cupidatat enim amet Lorem officia magna excepteur occaecat eu qui. Exercitation culpa deserunt non et tempor et non.\n            </p>\n            <p>\n              Do dolor eiusmod eu mollit dolore nostrud deserunt cillum irure esse sint irure fugiat exercitation. Magna sit voluptate id in tempor elit veniam enim cupidatat ea labore elit. Aliqua pariatur eu nulla labore magna dolore mollit occaecat sint commodo culpa. Eu non minim duis pariatur Lorem quis exercitation. Sunt qui ex incididunt sit anim incididunt sit elit ad officia id.\n            </p>\n            <p id=\"lorem2\">\n              Tempor voluptate ex consequat fugiat aliqua. Do sit et reprehenderit culpa deserunt culpa. Excepteur quis minim mollit irure nulla excepteur enim quis in laborum. Aliqua elit voluptate ad deserunt nulla reprehenderit adipisicing sint. Est in eiusmod exercitation esse commodo. Ea reprehenderit exercitation veniam adipisicing minim nostrud. Veniam dolore ex ea occaecat non enim minim id ut aliqua adipisicing ad. Occaecat excepteur aliqua tempor cupidatat aute dolore deserunt ipsum qui incididunt aliqua occaecat sit quis. Culpa sint aliqua aliqua reprehenderit veniam irure fugiat ea ad.\n            </p>\n            <p>\n              Eu minim fugiat laborum irure veniam Lorem aliqua enim. Aliqua veniam incididunt consequat irure consequat tempor do nisi deserunt. Elit dolore ad quis consectetur sint laborum anim magna do nostrud amet. Ea nulla sit consequat quis qui irure dolor. Sint deserunt excepteur consectetur magna irure. Dolor tempor exercitation dolore pariatur incididunt ut laboris fugiat ipsum sunt veniam aute sunt labore. Non dolore sit nostrud eu ad excepteur cillum eu ex Lorem duis.\n            </p>\n            <p>\n              Id occaecat velit non ipsum occaecat aliqua quis ut. Eiusmod est magna non esse est ex incididunt aute ullamco. Cillum excepteur sint ipsum qui quis velit incididunt amet. Qui deserunt anim enim laborum cillum reprehenderit duis mollit amet ad officia enim. Minim sint et quis aliqua aliqua do minim officia dolor deserunt ipsum laboris. Nulla nisi voluptate consectetur est voluptate et amet. Occaecat ut quis adipisicing ad enim. Magna est magna sit duis proident veniam reprehenderit fugiat reprehenderit enim velit ex. Ullamco laboris culpa irure aliquip ad Lorem consequat veniam ad ipsum eu. Ipsum culpa dolore sunt officia laborum quis.\n            </p>\n\n            <h5 id=\"lorem3\">Lorem ipsum dolor sit amet</h5>\n\n            <p id=\"lorem4\">\n              Eiusmod nulla aliquip ipsum reprehenderit nostrud non excepteur mollit amet esse est est dolor. Dolore quis pariatur sit consectetur veniam esse ullamco duis Lorem qui enim ut veniam. Officia deserunt minim duis laborum dolor in velit pariatur commodo ullamco eu. Aute adipisicing ad duis labore laboris do mollit dolor cillum sunt aliqua ullamco. Esse tempor quis cillum consequat reprehenderit. Adipisicing proident anim eu sint elit aliqua anim dolore cupidatat fugiat aliquip qui.\n            </p>\n            <p id=\"lorem5\">\n              Nisi eiusmod esse cupidatat excepteur exercitation ipsum reprehenderit nostrud deserunt aliqua ullamco. Anim est irure commodo eiusmod pariatur officia. Est dolor ipsum excepteur magna aliqua ad veniam irure qui occaecat eiusmod aute fugiat commodo. Quis mollit incididunt amet sit minim velit eu fugiat voluptate excepteur. Sit minim id pariatur ex cupidatat cupidatat nostrud nostrud ipsum.\n            </p>\n            <p>\n              Enim ea officia excepteur ad veniam id reprehenderit eiusmod esse mollit consequat. Esse non aute ullamco Lorem aliqua qui dolore irure eiusmod aute aliqua proident labore aliqua. Ipsum voluptate voluptate exercitation laborum deserunt nulla elit aliquip et minim ex veniam. Duis cupidatat aute sunt officia mollit dolor ad elit ad aute labore nostrud duis pariatur. In est sint voluptate consectetur velit ea non labore. Ut duis ea aliqua consequat nulla laboris fugiat aute id culpa proident. Minim eiusmod laboris enim Lorem nisi excepteur mollit voluptate enim labore reprehenderit officia mollit.\n            </p>\n            <p>\n              Cupidatat labore nisi ut sunt voluptate quis sunt qui ad Lorem esse nisi. Ex esse velit ullamco incididunt occaecat dolore veniam tempor minim adipisicing amet. Consequat in exercitation est elit anim consequat cillum sint labore cillum. Aliquip mollit laboris ad labore anim.\n            </p>\n          </div>\n        </section>\n      </div>\n      <footer class=\"mdl-mega-footer\">\n        <div class=\"mdl-mega-footer--middle-section\">\n          <div class=\"mdl-mega-footer--drop-down-section\">\n            <input class=\"mdl-mega-footer--heading-checkbox\" type=\"checkbox\" checked>\n            <h1 class=\"mdl-mega-footer--heading\">Features</h1>\n            <ul class=\"mdl-mega-footer--link-list\">\n              <li><a href=\"#\">About</a></li>\n              <li><a href=\"#\">Terms</a></li>\n              <li><a href=\"#\">Partners</a></li>\n              <li><a href=\"#\">Updates</a></li>\n            </ul>\n          </div>\n          <div class=\"mdl-mega-footer--drop-down-section\">\n            <input class=\"mdl-mega-footer--heading-checkbox\" type=\"checkbox\" checked>\n            <h1 class=\"mdl-mega-footer--heading\">Details</h1>\n            <ul class=\"mdl-mega-footer--link-list\">\n              <li><a href=\"#\">Spec</a></li>\n              <li><a href=\"#\">Tools</a></li>\n              <li><a href=\"#\">Resources</a></li>\n            </ul>\n          </div>\n          <div class=\"mdl-mega-footer--drop-down-section\">\n            <input class=\"mdl-mega-footer--heading-checkbox\" type=\"checkbox\" checked>\n            <h1 class=\"mdl-mega-footer--heading\">Technology</h1>\n            <ul class=\"mdl-mega-footer--link-list\">\n              <li><a href=\"#\">How it works</a></li>\n              <li><a href=\"#\">Patterns</a></li>\n              <li><a href=\"#\">Usage</a></li>\n              <li><a href=\"#\">Products</a></li>\n              <li><a href=\"#\">Contracts</a></li>\n            </ul>\n          </div>\n          <div class=\"mdl-mega-footer--drop-down-section\">\n            <input class=\"mdl-mega-footer--heading-checkbox\" type=\"checkbox\" checked>\n            <h1 class=\"mdl-mega-footer--heading\">FAQ</h1>\n            <ul class=\"mdl-mega-footer--link-list\">\n              <li><a href=\"#\">Questions</a></li>\n              <li><a href=\"#\">Answers</a></li>\n              <li><a href=\"#\">Contact us</a></li>\n            </ul>\n          </div>\n        </div>\n        <!--<div class=\"mdl-mega-footer--bottom-section\">\n          <div class=\"mdl-logo\">\n            More Information\n          </div>\n          <ul class=\"mdl-mega-footer--link-list\">\n            <li><a href=\"https://developers.google.com/web/starter-kit/\">Web Starter Kit</a></li>\n            <li><a href=\"#\">Help</a></li>\n            <li><a href=\"#\">Privacy and Terms</a></li>\n          </ul>\n        </div>-->\n      </footer>\n    </main>\n  </div>\n  <a href=\"https://github.com/google/material-design-lite/blob/mdl-1.x/templates/text-only/\" target=\"_blank\" id=\"view-source\" class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast\">View Source</a>\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n    <header class=\"mdl-layout__header mdl-layout__header--scroll mdl-color--primary\">\n      <div class=\"mdl-layout--large-screen-only mdl-layout__header-row\">\n      </div>\n      <div class=\"mdl-layout--large-screen-only mdl-layout__header-row\"> \n          <mat-icon style=\"vertical-align: middle; margin: 0 44px 17px 0; font-size: 44px;\">assistant</mat-icon><h3>NYC DOH Restaturants Processor</h3>\n      </div>\n      <div class=\"mdl-layout--large-screen-only mdl-layout__header-row\">\n      </div>\n      <div class=\"mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark\">\n        <a href=\"#overview\" class=\"mdl-layout__tab is-active\">Overview</a>\n        <!--<a href=\"#features\" class=\"mdl-layout__tab\">Chart</a>-->\n        <a href=\"#features\" class=\"mdl-layout__tab\">Technology</a>\n      </div>\n    </header>\n    <main class=\"mdl-layout__content\">\n      <div class=\"mdl-layout__tab-panel is-active\" id=\"overview\">\n        <section class=\"section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp\">\n          <app-etl-control></app-etl-control>\n        </section>\n\n        <!-- Search Details -->\n        <section class=\"section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp\">\n          <app-table-search></app-table-search>\n        </section>\n      </div>\n      <!--<div class=\"mdl-layout__tab-panel\" id=\"features\">\n        <section class=\"section--center mdl-grid mdl-grid--no-spacing\">\n          <div class=\"mdl-cell mdl-cell--12-col\">\n            <h4>Features</h4>\n            Minim duis incididunt est cillum est ex occaecat consectetur. Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.\n            <ul class=\"toc\">\n              <h4>Contents</h4>\n              <a href=\"#lorem1\">Lorem ipsum</a>\n              <a href=\"#lorem2\">Lorem ipsum</a>\n              <a href=\"#lorem3\">Lorem ipsum</a>\n              <a href=\"#lorem4\">Lorem ipsum</a>\n              <a href=\"#lorem5\">Lorem ipsum</a>\n            </ul>\n\n            <h5 id=\"lorem1\">Lorem ipsum dolor sit amet</h5>\n            Excepteur et pariatur officia veniam anim culpa cupidatat consequat ad velit culpa est non.\n            <ul>\n              <li>Nisi qui nisi duis commodo duis reprehenderit consequat velit aliquip.</li>\n              <li>Dolor consectetur incididunt in ipsum laborum non et irure pariatur excepteur anim occaecat officia sint.</li>\n              <li>Lorem labore proident officia excepteur do.</li>\n            </ul>\n\n            <p>\n              Sit qui est voluptate proident minim cillum in aliquip cupidatat labore pariatur id tempor id. Proident occaecat occaecat sint mollit tempor duis dolor cillum anim. Dolore sunt ea mollit fugiat in aliqua consequat nostrud aliqua ut irure in dolore. Proident aliqua culpa sint sint exercitation. Non proident occaecat reprehenderit veniam et proident dolor id culpa ea tempor do dolor. Nulla adipisicing qui fugiat id dolor. Nostrud magna voluptate irure veniam veniam labore ipsum deserunt adipisicing laboris amet eu irure. Sunt dolore nisi velit sit id. Nostrud voluptate labore proident cupidatat enim amet Lorem officia magna excepteur occaecat eu qui. Exercitation culpa deserunt non et tempor et non.\n            </p>\n            <p>\n              Do dolor eiusmod eu mollit dolore nostrud deserunt cillum irure esse sint irure fugiat exercitation. Magna sit voluptate id in tempor elit veniam enim cupidatat ea labore elit. Aliqua pariatur eu nulla labore magna dolore mollit occaecat sint commodo culpa. Eu non minim duis pariatur Lorem quis exercitation. Sunt qui ex incididunt sit anim incididunt sit elit ad officia id.\n            </p>\n            <p id=\"lorem2\">\n              Tempor voluptate ex consequat fugiat aliqua. Do sit et reprehenderit culpa deserunt culpa. Excepteur quis minim mollit irure nulla excepteur enim quis in laborum. Aliqua elit voluptate ad deserunt nulla reprehenderit adipisicing sint. Est in eiusmod exercitation esse commodo. Ea reprehenderit exercitation veniam adipisicing minim nostrud. Veniam dolore ex ea occaecat non enim minim id ut aliqua adipisicing ad. Occaecat excepteur aliqua tempor cupidatat aute dolore deserunt ipsum qui incididunt aliqua occaecat sit quis. Culpa sint aliqua aliqua reprehenderit veniam irure fugiat ea ad.\n            </p>\n            <p>\n              Eu minim fugiat laborum irure veniam Lorem aliqua enim. Aliqua veniam incididunt consequat irure consequat tempor do nisi deserunt. Elit dolore ad quis consectetur sint laborum anim magna do nostrud amet. Ea nulla sit consequat quis qui irure dolor. Sint deserunt excepteur consectetur magna irure. Dolor tempor exercitation dolore pariatur incididunt ut laboris fugiat ipsum sunt veniam aute sunt labore. Non dolore sit nostrud eu ad excepteur cillum eu ex Lorem duis.\n            </p>\n            <p>\n              Id occaecat velit non ipsum occaecat aliqua quis ut. Eiusmod est magna non esse est ex incididunt aute ullamco. Cillum excepteur sint ipsum qui quis velit incididunt amet. Qui deserunt anim enim laborum cillum reprehenderit duis mollit amet ad officia enim. Minim sint et quis aliqua aliqua do minim officia dolor deserunt ipsum laboris. Nulla nisi voluptate consectetur est voluptate et amet. Occaecat ut quis adipisicing ad enim. Magna est magna sit duis proident veniam reprehenderit fugiat reprehenderit enim velit ex. Ullamco laboris culpa irure aliquip ad Lorem consequat veniam ad ipsum eu. Ipsum culpa dolore sunt officia laborum quis.\n            </p>\n\n            <h5 id=\"lorem3\">Lorem ipsum dolor sit amet</h5>\n\n            <p id=\"lorem4\">\n              Eiusmod nulla aliquip ipsum reprehenderit nostrud non excepteur mollit amet esse est est dolor. Dolore quis pariatur sit consectetur veniam esse ullamco duis Lorem qui enim ut veniam. Officia deserunt minim duis laborum dolor in velit pariatur commodo ullamco eu. Aute adipisicing ad duis labore laboris do mollit dolor cillum sunt aliqua ullamco. Esse tempor quis cillum consequat reprehenderit. Adipisicing proident anim eu sint elit aliqua anim dolore cupidatat fugiat aliquip qui.\n            </p>\n            <p id=\"lorem5\">\n              Nisi eiusmod esse cupidatat excepteur exercitation ipsum reprehenderit nostrud deserunt aliqua ullamco. Anim est irure commodo eiusmod pariatur officia. Est dolor ipsum excepteur magna aliqua ad veniam irure qui occaecat eiusmod aute fugiat commodo. Quis mollit incididunt amet sit minim velit eu fugiat voluptate excepteur. Sit minim id pariatur ex cupidatat cupidatat nostrud nostrud ipsum.\n            </p>\n            <p>\n              Enim ea officia excepteur ad veniam id reprehenderit eiusmod esse mollit consequat. Esse non aute ullamco Lorem aliqua qui dolore irure eiusmod aute aliqua proident labore aliqua. Ipsum voluptate voluptate exercitation laborum deserunt nulla elit aliquip et minim ex veniam. Duis cupidatat aute sunt officia mollit dolor ad elit ad aute labore nostrud duis pariatur. In est sint voluptate consectetur velit ea non labore. Ut duis ea aliqua consequat nulla laboris fugiat aute id culpa proident. Minim eiusmod laboris enim Lorem nisi excepteur mollit voluptate enim labore reprehenderit officia mollit.\n            </p>\n            <p>\n              Cupidatat labore nisi ut sunt voluptate quis sunt qui ad Lorem esse nisi. Ex esse velit ullamco incididunt occaecat dolore veniam tempor minim adipisicing amet. Consequat in exercitation est elit anim consequat cillum sint labore cillum. Aliquip mollit laboris ad labore anim.\n            </p>\n          </div>\n        </section>\n      </div>-->\n      <footer class=\"mdl-mega-footer\">\n        <div class=\"mdl-mega-footer--middle-section\">\n          <h2>&nbsp;</h2>\n        </div>\n        <!--<div class=\"mdl-mega-footer--bottom-section\">\n          <div class=\"mdl-logo\">\n            More Information\n          </div>\n          <ul class=\"mdl-mega-footer--link-list\">\n            <li><a href=\"https://developers.google.com/web/starter-kit/\">Web Starter Kit</a></li>\n            <li><a href=\"#\">Help</a></li>\n            <li><a href=\"#\">Privacy and Terms</a></li>\n          </ul>\n        </div>-->\n      </footer>\n    </main>\n  </div>\n  <a href=\"https://github.com/hawkerfun/nyc-doh-restaurants\" target=\"_blank\" id=\"view-source\" class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast\">View Source</a>\n\n"
 
 /***/ }),
 
@@ -95,13 +95,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _table_search_table_search_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./table-search/table-search.component */ "./src/app/table-search/table-search.component.ts");
-/* harmony import */ var _etl_control_etl_control_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./etl-control/etl-control.component */ "./src/app/etl-control/etl-control.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _table_search_table_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./table-search/table-search.component */ "./src/app/table-search/table-search.component.ts");
+/* harmony import */ var _etl_control_etl_control_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./etl-control/etl-control.component */ "./src/app/etl-control/etl-control.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -118,30 +119,35 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
-                _table_search_table_search_component__WEBPACK_IMPORTED_MODULE_8__["TableSearchComponent"],
-                _etl_control_etl_control_component__WEBPACK_IMPORTED_MODULE_9__["EtlControlComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
+                _table_search_table_search_component__WEBPACK_IMPORTED_MODULE_9__["TableSearchComponent"],
+                _etl_control_etl_control_component__WEBPACK_IMPORTED_MODULE_10__["EtlControlComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatToolbarModule"],
-                _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatTableModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatProgressSpinnerModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatToolbarModule"],
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatProgressSpinnerModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatInputModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatPaginatorModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSelectModule"]
             ],
             providers: [
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -187,11 +193,67 @@ var EtlServiceService = /** @class */ (function () {
     EtlServiceService.prototype.stopEtl = function () {
         return this.httpClient.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiConf.url + "/stop-etl").toPromise();
     };
+    EtlServiceService.prototype.getEtlStatus = function () {
+        return this.httpClient.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiConf.url + "/get-etl-status").toPromise();
+    };
+    EtlServiceService.prototype.isCompletedEtl = function () {
+        return this.httpClient.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiConf.url + "/iscompleted-etl").toPromise();
+    };
+    EtlServiceService.prototype.getCountOfProccededLines = function () {
+        return this.httpClient.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiConf.url + "/count-proceeded-lines-etl").toPromise();
+    };
     EtlServiceService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], EtlServiceService);
     return EtlServiceService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/services/restaurant-db.service.ts":
+/*!********************************************************!*\
+  !*** ./src/app/core/services/restaurant-db.service.ts ***!
+  \********************************************************/
+/*! exports provided: RestaurantDbService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestaurantDbService", function() { return RestaurantDbService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var RestaurantDbService = /** @class */ (function () {
+    function RestaurantDbService(httpClient) {
+        this.httpClient = httpClient;
+        console.log('RestaurantDbService Initialized');
+    }
+    RestaurantDbService.prototype.getRestaurants = function (searchRestaurantType, pageIndex, orderBy) {
+        console.log('getRestaurants');
+        return this.httpClient.get(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiConf.url + "/get-restaurants?type=" + searchRestaurantType + "&pageIndex=" + pageIndex + "&orderBy=" + orderBy).toPromise();
+    };
+    RestaurantDbService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], RestaurantDbService);
+    return RestaurantDbService;
 }());
 
 
@@ -216,7 +278,7 @@ module.exports = ".button-row button,\n.button-row a {\n  margin-right: 8px;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"mdl-grid mdl-grid--no-spacing\">\n  <header class=\"section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white\">\n      <i class=\"material-icons\" *ngIf=\"false\">play_circle_filled</i>\n      <mat-spinner *ngIf=\"true\"></mat-spinner>\n    </header>\n    <div class=\"mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone\">\n      <div class=\"mdl-card__supporting-text\">\n        <h4>ETL Runner</h4>\n        If you want to start new ETL Job pleas click start. Note: It will trunckate all tables. \n      </div>\n      <div class=\"mdl-card__actions button-row\">\n          <button mat-raised-button color=\"primary\" (click)=\"startEtlRunner()\">Start</button>\n          <button mat-raised-button color=\"warn\">Stop</button>\n      </div>\n    </div>\n    <button class=\"mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon\" id=\"btn1\">\n      <i class=\"material-icons\">more_vert</i>\n    </button>\n    <ul class=\"mdl-menu mdl-js-menu mdl-menu--bottom-right\" for=\"btn1\">\n      <li class=\"mdl-menu__item\">Hide</li>\n    </ul>\n</section>"
+module.exports = "<section class=\"mdl-grid mdl-grid--no-spacing\">\n  <header class=\"section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white\">\n      <i class=\"material-icons\" *ngIf=\"!isEtlJobRunning\" (click)=\"startEtlRunner()\">play_circle_filled</i>\n      <mat-spinner *ngIf=\"isEtlJobRunning\"></mat-spinner>\n    </header>\n    <div class=\"mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone\">\n      <div class=\"mdl-card__supporting-text\">\n        <h4>ETL Runner</h4>\n        If you want to start new ETL Job pleas click start. Note: It will trunckate all tables. \n      </div>\n      <div class=\"mdl-card__actions button-row\">\n          <button mat-raised-button color=\"primary\" (click)=\"startEtlRunner()\" *ngIf=\"!isEtlJobRunning\">Start ETL Job</button>\n          <button mat-raised-button color=\"warn\" (click)=\"stopEtlRunner()\" *ngIf=\"isEtlJobRunning\">Stop ETL Job</button>\n          <span class=\"mat-paginator-page-size\" style=\"margin-top: 10px; vertical-align: middle; margin-left: -5px; float: right;\"  *ngIf=\"isEtlJobRunning\">\n              <span class=\"mat-paginator-page-size-label\">Items Proceeded By ETL:</span>\n              <span class=\"ng-star-inserted\">{{telProceedeLines}}</span>\n          </span> \n      </div>\n    </div>\n    <button class=\"mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon\" id=\"btn1\">\n      <i class=\"material-icons\">more_vert</i>\n    </button>\n    <ul class=\"mdl-menu mdl-js-menu mdl-menu--bottom-right\" for=\"btn1\">\n      <li class=\"mdl-menu__item\">Hide</li>\n    </ul>\n</section>"
 
 /***/ }),
 
@@ -248,14 +310,84 @@ var EtlControlComponent = /** @class */ (function () {
         this._etlServiceService = _etlServiceService;
     }
     EtlControlComponent.prototype.ngOnInit = function () {
+        this.etlRunnerStatus = 'stopped';
+        this.isEtlJobRunning = false;
+        this.telProceedeLines = 0;
+        this.getEtlStatus();
     };
-    EtlControlComponent.prototype.logMessage = function () {
-        console.log('Hi');
+    EtlControlComponent.prototype.startPollProccedeLines = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this._etlServiceService.getCountOfProccededLines()
+                .then(function (data) {
+                _this.telProceedeLines = data.telProceedeLines;
+                if (_this.etlRunnerStatus == 'stared') {
+                    _this.startPollProccedeLines();
+                }
+            });
+        }, 1500);
+    }; //
+    EtlControlComponent.prototype.setStoppedState = function () {
+        this.etlRunnerStatus = 'stopped';
+        this.isEtlJobRunning = false;
+    };
+    EtlControlComponent.prototype.setRunningState = function () {
+        this.etlRunnerStatus = 'stared';
+        this.isEtlJobRunning = true;
+        this.isCompletedEtl();
+        this.startPollProccedeLines();
+    };
+    EtlControlComponent.prototype.getEtlStatus = function () {
+        var _this = this;
+        this._etlServiceService.getEtlStatus()
+            .then(function (data) {
+            if (data.etlStatus == "stopped") {
+                _this.setStoppedState();
+            }
+            if (data.etlStatus == "running") {
+                console.log('Running');
+                _this.setRunningState();
+            }
+        })
+            .catch(function (err) {
+            console.log(err);
+        });
+    };
+    EtlControlComponent.prototype.isCompletedEtl = function () {
+        var _this = this;
+        this._etlServiceService.isCompletedEtl()
+            .then(function () {
+            console.log('Changed');
+            _this.setStoppedState();
+        })
+            .catch(function () {
+            console.log('Changed with Error');
+            _this.setStoppedState();
+        });
     };
     EtlControlComponent.prototype.startEtlRunner = function () {
+        var _this = this;
+        console.log('Start!');
         this._etlServiceService.startEtl()
             .then(function () {
-            console.log('executed');
+            console.log('Changed');
+            _this.setRunningState();
+        })
+            .catch(function () {
+            console.log('Changed with Error');
+        });
+    };
+    EtlControlComponent.prototype.stopEtlRunner = function () {
+        var _this = this;
+        console.log('Stopr!');
+        this._etlServiceService.stopEtl()
+            .then(function () {
+            console.log('Changed');
+            _this.setStoppedState();
+        })
+            .catch(function () {
+            console.log('Changed with Error');
+            _this.setStoppedState();
         });
     };
     EtlControlComponent = __decorate([
@@ -292,7 +424,7 @@ module.exports = "table {\n    width: 100%;\n  }"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp\">\n    <div class=\"mdl-card mdl-cell mdl-cell--12-col\">\n      <div class=\"mdl-card__supporting-text mdl-grid mdl-grid--no-spacing\">\n        <h4 class=\"mdl-cell mdl-cell--12-col\">Search Details</h4>\n          <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n              <!--- Note that these columns can be defined in any order.\n                    The actual rendered columns are set as a property on the row definition\" -->\n            \n              <!-- Position Column -->\n              <ng-container matColumnDef=\"position\">\n                <th mat-header-cell *matHeaderCellDef> No. </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\n              </ng-container>\n            \n              <!-- Name Column -->\n              <ng-container matColumnDef=\"name\">\n                <th mat-header-cell *matHeaderCellDef> Name </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n              </ng-container>\n            \n              <!-- Weight Column -->\n              <ng-container matColumnDef=\"weight\">\n                <th mat-header-cell *matHeaderCellDef> Weight </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.weight}} </td>\n              </ng-container>\n            \n              <!-- Symbol Column -->\n              <ng-container matColumnDef=\"symbol\">\n                <th mat-header-cell *matHeaderCellDef> Symbol </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.symbol}} </td>\n              </ng-container>\n            \n              <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n              <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n            </table>\n          </div>\n        </div>\n      </section>\n"
+module.exports = "<section class=\"section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp\">\n    <div class=\"mdl-card mdl-cell mdl-cell--12-col\">\n      <div class=\"mdl-card__supporting-text mdl-grid mdl-grid--no-spacing\">\n        <h4 class=\"mdl-cell mdl-cell--2-col\" style=\"display: block; float: left; width: 50%;\">Search Details</h4>\n        <div class=\"mdl-cell mdl-cell--2-col\" style=\"display: block; float: left; width: 50%;\">\n            <button mat-raised-button color=\"primary\" (click)=\"executeSearch()\" style=\"float: right;\">Get</button>\n        </div>\n        <div>\n          <mat-form-field>\n            <input matInput placeholder=\"Restaurant Type\" value=\"Thai\" [(ngModel)]=\"searchRestaurantType\" name=\"searchRestaurantType\" id=\"searchRestaurantType\">\n          </mat-form-field>\n        </div>\n        <div style=\"margin-left: 20px\">\n            <mat-form-field>\n              <mat-select [(value)]=\"orderBy\" placeholder=\"Order By\">\n                <mat-option value=\"SCORE\">SCORE</mat-option>\n                <mat-option value=\"GRADE\">GRADE</mat-option>\n              </mat-select>\n            </mat-form-field>\n          </div>\n          <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n              <!--- Note that these columns can be defined in any order.\n                    The actual rendered columns are set as a property on the row definition\" -->\n            \n              <!-- Position Column -->\n              <ng-container matColumnDef=\"DBA\">\n                <th mat-header-cell *matHeaderCellDef> Name </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.DBA.substring(0,20)}} </td>\n              </ng-container>\n            \n              <!-- Name Column -->\n              <ng-container matColumnDef=\"GRADE\">\n                <th mat-header-cell *matHeaderCellDef> GRADE </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.GRADE == 'Z' ? \"No Data\": element.GRADE}} </td>\n              </ng-container>\n            \n              <!-- Weight Column -->\n              <ng-container matColumnDef=\"SCORE\">\n                <th mat-header-cell *matHeaderCellDef> SCORE </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.SCORE}} </td>\n              </ng-container>\n            \n              <!-- Symbol Column -->\n              <ng-container matColumnDef=\"BORO\">\n                <th mat-header-cell *matHeaderCellDef> BORO </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.BORO}} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"BUILDING\">\n                <th mat-header-cell *matHeaderCellDef> BUILDING </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.BUILDING}} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"STREET\">\n                <th mat-header-cell *matHeaderCellDef> STREET </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.STREET}} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"ZIPCODE\">\n                <th mat-header-cell *matHeaderCellDef> ZIPCODE </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.ZIPCODE}} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"PHONE\">\n                <th mat-header-cell *matHeaderCellDef> PHONE </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.PHONE}} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"GRADE_DATE\">\n                <th mat-header-cell *matHeaderCellDef> GRADE_DATE </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.GRADE_DATE}} </td>\n              </ng-container>\n            \n              <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n              <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n            </table>\n            <mat-paginator [length]=\"500000\"\n              [pageSize]=\"20\"\n              (page)=\"pullNewDataBatch($event)\">\n            </mat-paginator>\n          </div>\n        </div>\n      </section>\n"
 
 /***/ }),
 
@@ -307,6 +439,8 @@ module.exports = "<section class=\"section--center mdl-grid mdl-grid--no-spacing
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableSearchComponent", function() { return TableSearchComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _core_services_restaurant_db_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/services/restaurant-db.service */ "./src/app/core/services/restaurant-db.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -316,6 +450,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 var ELEMENT_DATA = [
     { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
@@ -330,19 +466,51 @@ var ELEMENT_DATA = [
     { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
 ];
 var TableSearchComponent = /** @class */ (function () {
-    function TableSearchComponent() {
-        this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
-        this.dataSource = ELEMENT_DATA;
+    function TableSearchComponent(_RestaurantDbService) {
+        this._RestaurantDbService = _RestaurantDbService;
+        this.displayedColumns = ['DBA', 'GRADE', 'SCORE', 'BUILDING', 'STREET', 'BORO', 'ZIPCODE', 'PHONE', 'GRADE_DATE'];
+        this.dataSource = [];
+        this.searchRestaurantType = '';
+        this.orderBy = 'SCORE';
+        this.length = 100;
+        this.pageSize = 20;
+        this.pageSizeOptions = [5, 10, 20, 100];
     }
     TableSearchComponent.prototype.ngOnInit = function () {
+        this.getRestaurants(0);
     };
+    TableSearchComponent.prototype.pullNewDataBatch = function ($event) {
+        var pageIndex = $event.pageIndex;
+        var pageSize = $event.pageSize;
+        this.getRestaurants(pageIndex * pageSize);
+    };
+    TableSearchComponent.prototype.executeSearch = function () {
+        this.paginator.pageIndex = 0;
+        this.getRestaurants(0);
+    };
+    TableSearchComponent.prototype.getRestaurants = function (pageIndex) {
+        var _this = this;
+        console.log('Get Restaurants');
+        this._RestaurantDbService.getRestaurants(this.searchRestaurantType, pageIndex, this.orderBy)
+            .then(function (data) {
+            console.log(data);
+            _this.dataSource = data.restaurants;
+        })
+            .catch(function (err) {
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"]),
+        __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"])
+    ], TableSearchComponent.prototype, "paginator", void 0);
     TableSearchComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-table-search',
             template: __webpack_require__(/*! ./table-search.component.html */ "./src/app/table-search/table-search.component.html"),
-            styles: [__webpack_require__(/*! ./table-search.component.css */ "./src/app/table-search/table-search.component.css")]
+            styles: [__webpack_require__(/*! ./table-search.component.css */ "./src/app/table-search/table-search.component.css")],
+            providers: [_core_services_restaurant_db_service__WEBPACK_IMPORTED_MODULE_1__["RestaurantDbService"]]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_core_services_restaurant_db_service__WEBPACK_IMPORTED_MODULE_1__["RestaurantDbService"]])
     ], TableSearchComponent);
     return TableSearchComponent;
 }());
@@ -367,7 +535,7 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     apiConf: {
-        url: 'http://127.0.0.0:300'
+        url: 'http://127.0.0.1:3000'
     }
 };
 /*

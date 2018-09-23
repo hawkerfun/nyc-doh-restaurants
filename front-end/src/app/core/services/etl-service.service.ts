@@ -24,4 +24,8 @@ export class EtlServiceService {
   isCompletedEtl() {
     return this.httpClient.get(`${environment.apiConf.url}/iscompleted-etl`).toPromise();
   }
+
+  getCountOfProccededLines() {
+    return this.httpClient.get(`${environment.apiConf.url}/count-proceeded-lines-etl`).toPromise();  
+  }
 }

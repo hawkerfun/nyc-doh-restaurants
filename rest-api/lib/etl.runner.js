@@ -106,15 +106,15 @@ module.exports = () => {
             const inspectionInserts = inspections.slice(); //let's make it imutable;
             inspectionInserts.push([
                 prasedLine[0] ? prasedLine[0]: null,
-                prasedLine[8] ? prasedLine[8] : ' ',
-                prasedLine[9] ? prasedLine[9] : ' ',
+                prasedLine[8] ? prasedLine[8] : null,
+                prasedLine[9] ? prasedLine[9] : null,
                 prasedLine[10] ? prasedLine[10] : null,
-                prasedLine[12] ? prasedLine[12] : ' ',
+                prasedLine[12] ? prasedLine[12] : null,
                 !isNaN(parseInt(prasedLine[13], 10)) ? parseInt(prasedLine[13], 10) : 0,
-                prasedLine[14] ? prasedLine[14] : ' ',
-                prasedLine[15] ? prasedLine[15] : ' ',
-                prasedLine[16] ? prasedLine[16] : ' ',
-                prasedLine[17] ? prasedLine[17] : ' ' 
+                prasedLine[14] ? prasedLine[14] : 'Z',
+                prasedLine[15] ? prasedLine[15] : null,
+                prasedLine[16] ? prasedLine[16] : null,
+                prasedLine[17] ? prasedLine[17] : null 
             ]);
 
             return inspectionInserts;  
@@ -149,11 +149,11 @@ module.exports = () => {
                     inspectionInserts = this.__addNewInspection(parsedCsvLine, inspectionInserts);
                 }
 
-                if(this.linesTransformed > 20000) {
+                /*if(this.linesTransformed > 20000) {
                     this.isCompleted = true;
                     this.etlStatus = 'stopped';
                     this.stream.destroy();
-                }
+                }*/
 
                 if (!(++this.linesTransformed % numRows)) {
                 
@@ -194,6 +194,10 @@ module.exports = () => {
             this.isCompleted = true;
             this.etlStatus = 'stopped';
             this.stream.destroy();    
+        }
+
+        getProceedeLines() {
+            return this.linesTransformed;
         }
 
 

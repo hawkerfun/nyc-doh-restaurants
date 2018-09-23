@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
   }
-  app-table-search, app-etl-control{
+  app-table-search, app-etl-control, mat-paginator{
       width: 100%;
   }
   .mdl-demo .mdl-layout__header-row {

@@ -4,9 +4,9 @@
 const   mysql = require('mysql'),
         Q = require('q');
 
+let RestaurantDBInstance = null;        
 
 module.exports = () => {
-
     class DBDriver {
 
         constructor(conf) {
@@ -32,7 +32,7 @@ module.exports = () => {
             return defer.promise;
         }
 
-        __selectRecrods(sql) {
+        __executeQuery(sql) {
             const defer = Q.defer();
 
             this.connection.query(sql, function(err, results, fields) {
@@ -56,28 +56,59 @@ module.exports = () => {
     class RestaurantDB extends DBDriver {
 
         constructor(dbconfigs) {
-            super(dbconfigs);
 
+            //If Singleton Already Initialized
+            if (RestaurantDBInstance) {
+                return RestaurantDBInstance;
+            }
+
+            super(dbconfigs);
             this.violationsTable = "Violations";
             this.inspectionTable = "Inspection";
-            this.restTable = "Rest"
+            this.restTable = "Rest";
+
+            RestaurantDBInstance = this;
+
+            return RestaurantDBInstance;
         }
 
-        getRestaturants(start, limit) {
-            console.log('executed');
-            const sql = `SELECT ${this.restTable}.DBA, ${this.inspectionTable}.GRADE, ${this.inspectionTable}.SCORE, ${this.inspectionTable}.GRADE_DATE
+        getRestaturants(restaurantType, start, limit, orderBy) {
+            let whereCondition = '';
+
+            if (restaurantType) {
+                whereCondition = `WHERE ${this.restTable}.CUISINE_DESCRIPTION = ${mysql.escape(restaurantType)} AND ${this.inspectionTable}.id IN
+                (SELECT id FROM ${this.inspectionTable} WHERE ${this.inspectionTable}.GRADE <= 'B' AND ${this.inspectionTable}.GRADE <> ' ' AND ${this.inspectionTable}.GRADE_DATE <> ' ' GROUP BY  ${this.inspectionTable}.CAMIS Order by ${this.inspectionTable}.GRADE_DATE DESC)`;
+            }
+
+            const sql = `SELECT ${this.restTable}.CAMIS, ${this.restTable}.DBA, ${this.restTable}.BUILDING, ${this.restTable}.STREET, ${this.restTable}.BORO, ${this.restTable}.ZIPCODE, ${this.restTable}.PHONE, ${this.inspectionTable}.GRADE, ${this.inspectionTable}.SCORE, ${this.inspectionTable}.GRADE_DATE
                         FROM ${this.restTable}
                         
                         Left Join ${this.inspectionTable}
                             ON ${this.inspectionTable}.CAMIS = ${this.restTable}.CAMIS
-                            
-                        WHERE ${this.restTable}.CUISINE_DESCRIPTION = 'Thai' AND ${this.inspectionTable}.id IN
-                        (SELECT id FROM ${this.inspectionTable} WHERE ${this.inspectionTable}.GRADE <= 'B' AND ${this.inspectionTable}.GRADE <> ' ' AND ${this.inspectionTable}.GRADE_DATE <> ' ' GROUP BY CAMIS Order by ${this.inspectionTable}.GRADE_DATE DESC)
                         
-                        Order by ${this.inspectionTable}.SCORE DESC
+                        ${whereCondition}    
+                            
+                        GROUP BY ${this.inspectionTable}.CAMIS, ${this.inspectionTable}.id 
+
+                        Order by ${this.inspectionTable}.${orderBy} ${orderBy == 'GRADE' ? '' : 'DESC' }
                         LIMIT ${start}, ${limit};`
 
-            return this.__selectRecrods(sql);
+            return this.__executeQuery(sql);
+        }
+
+        truncateViolations() {
+            const sql = `TRUNCATE TABLE ${this.violationsTable}`
+            return this.__executeQuery(sql);
+        }
+
+        truncateRest() {
+            const sql = `TRUNCATE TABLE ${this.restTable}`
+            return this.__executeQuery(sql);
+        }
+
+        truncateInspections() {
+            const sql = `TRUNCATE TABLE ${this.inspectionTable}`
+            return this.__executeQuery(sql);
         }
 
         insertViolations(violations) {
