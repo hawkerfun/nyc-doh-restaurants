@@ -5,11 +5,12 @@ const EtlRunner = require('./lib/etl.runner')().EtlRunner,
     APP_CONF = require('../env/env').APP_CONF,
     Q = require('q');  
 
-module.exports.start = () => {
+module.exports.etlJob = () => {
 
-    const filePath = 'https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv?accessType=DOWNLOAD',
-        RestauransDB = new RestaurantDB(APP_CONF.DB_CONF),
+    const RestauransDB = new RestaurantDB(APP_CONF.DB_CONF),
         ETL = new EtlRunner(APP_CONF.CSV_UR);
+
+    const start = () => {
 
         ETL.startJob(5000, (restaurantsInserts, violationInserts, inspectionInserts) => {
             let promises = [];
@@ -21,7 +22,17 @@ module.exports.start = () => {
             return Q.allSettled(promises);  
         });
 
-        return ETL;
+        return true;
+    }
 
+    const stop = () => {
+        ETL.stopJob();    
+    }
+
+    return {
+        start: start,
+        stop: stop,
+        getStatus: () => ETL.getStatus()
+    }
 
 }

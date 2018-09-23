@@ -18,7 +18,8 @@ module.exports = () => {
             this.violationCodes = [];
             this.inspectionsHistory = [];
 
-            this.inCompleted = false;
+            this.isCompleted = false;
+            this.etlStatus = 'stopped';
         }
 
         /*get inCompleted() {
@@ -29,7 +30,11 @@ module.exports = () => {
         }*/
 
         getStatus() {
-            return this.inCompleted;
+            return this.etlStatus;
+        }
+
+        isCompleted() {
+            return this.isCompleted;    
         }
 
         __parseCSVLine(csvLine) {
@@ -144,6 +149,12 @@ module.exports = () => {
                     inspectionInserts = this.__addNewInspection(parsedCsvLine, inspectionInserts);
                 }
 
+                if(this.linesTransformed > 20000) {
+                    this.isCompleted = true;
+                    this.etlStatus = 'stopped';
+                    this.stream.destroy();
+                }
+
                 if (!(++this.linesTransformed % numRows)) {
                 
                     this.pauseStream();
@@ -164,14 +175,25 @@ module.exports = () => {
                 }
             }).on('end', function(){
                 console.log('Read entire file.');
-                this.inCompleted = true;
+                this.isCompleted = true;
+                this.etlStatus = 'stopped';
+            })
+            .on('close', function (err) {
+                console.log('Stream has been destroyed and file has been closed');
             });    
         }
 
         startJob(numRows, insertItems) {
+            this.etlStatus = 'running';
             this.stream = this.initStream()
                 .pipe(es.split())
                 .pipe(this.transform(numRows, insertItems));    
+        }
+
+        stopJob() {
+            this.isCompleted = true;
+            this.etlStatus = 'stopped';
+            this.stream.destroy();    
         }
 
 
