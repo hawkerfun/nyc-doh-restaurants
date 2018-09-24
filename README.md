@@ -154,5 +154,5 @@ If this architecture will be implemented with DynamoDB table, by folowing schema
             ReadCapacityUnits: "1"
             WriteCapacityUnits: "200" 
 ```
-The table will allow to make write request for 1700 per second, which will take around 5 minutes for 500K item inserts. The price for this table will be `$919.04 / month` which is `$0.25` per each $500k inserts. So that's wy this solution doesn't worth implementation.
+The table will allow to make write request for 1700 per second, which will take around 5 minutes for 500K item inserts. The price for this table will be `$919.04 / month` which is `$0.25` per each $500k inserts. So that's why this solution doesn't worth of implementation.
 

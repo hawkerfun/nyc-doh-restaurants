@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {EtlServiceService} from '../core/services/etl-service.service';
+import {RestaurantDbService} from '../core/services/restaurant-db.service';
 
 @Component({
   selector: 'app-etl-control',
   templateUrl: './etl-control.component.html',
   styleUrls: ['./etl-control.component.css'],
-  providers:[EtlServiceService]
+  providers:[]
 })
 export class EtlControlComponent implements OnInit {
 
@@ -13,7 +14,7 @@ export class EtlControlComponent implements OnInit {
   isEtlJobRunning: Boolean;
   telProceedeLines: 0;
 
-  constructor(public _etlServiceService: EtlServiceService) { 
+  constructor(public _etlServiceService: EtlServiceService, private _RestaurantDbService: RestaurantDbService) { 
   
   }
 
@@ -35,7 +36,11 @@ export class EtlControlComponent implements OnInit {
         })
     }, 1500);
     
-  }//
+  }
+
+  trunkateTables() {
+    this._RestaurantDbService.trunkateRestaurants();
+  }
 
   setStoppedState() {
     this.etlRunnerStatus = 'stopped';
@@ -47,6 +52,7 @@ export class EtlControlComponent implements OnInit {
     this.isEtlJobRunning = true;
     this.isCompletedEtl();
     this.startPollProccedeLines();
+    this._RestaurantDbService.getRestaurantsLongPoll();
   }
 
   getEtlStatus() {

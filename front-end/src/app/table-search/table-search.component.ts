@@ -26,7 +26,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-table-search',
   templateUrl: './table-search.component.html',
   styleUrls: ['./table-search.component.css'],
-  providers:[RestaurantDbService]
+  providers:[]
 })
 export class TableSearchComponent implements OnInit {
 
@@ -45,6 +45,9 @@ export class TableSearchComponent implements OnInit {
   ngOnInit() {
   
     this.getRestaurants(0);
+    this._RestaurantDbService.setRestaurantsHolder((data) => {
+      this.dataSource = data;
+    });
 
   }
 

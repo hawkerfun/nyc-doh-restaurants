@@ -49,7 +49,41 @@ app.get('/iscompleted-etl', function (req, res) {
 
 app.get('/count-proceeded-lines-etl', function(req, res) {
     res.send({telProceedeLines: etlJob.getProceedeLines()});        
-})
+});
+
+app.get('/get-restaurants-longpoll', function(req, res) {
+    const longPoll = () => {
+        setTimeout(() => {
+            Restaurants.getRestaturants('', 0, 'SCORE')
+                .then((data) => {
+                    if(!data.length) {
+                        longPoll();    
+                    } else {
+                        res.send({restaurants: data});
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                    res.send({message: err});   
+                })  
+        },1000);
+    }
+
+    longPoll();    
+});
+
+app.get('/trunkate-tables', function (req, res) {
+    Restaurants.trunkateTables()
+        .then(() => {
+            res.send({message: 'Successfully Trunkated'});
+        })
+        .catch((err) => {
+            console.log(err);
+            res.send({message: err});   
+        })
+
+
+});
 
 app.get('/get-restaurants', function (req, res) {
     const restaurantType = req.query.type || '';

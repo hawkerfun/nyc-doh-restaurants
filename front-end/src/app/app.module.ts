@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {RestaurantDbService} from './core/services/restaurant-db.service';
+import {EtlServiceService} from './core/services/etl-service.service';
 
 import {
   MatButtonModule, 
@@ -41,7 +43,9 @@ import { EtlControlComponent } from './etl-control/etl-control.component';
     MatSelectModule
   ],
   providers: [
-    HttpClient
+    HttpClient,
+    EtlServiceService, 
+    RestaurantDbService
   ],
   bootstrap: [AppComponent]
 })

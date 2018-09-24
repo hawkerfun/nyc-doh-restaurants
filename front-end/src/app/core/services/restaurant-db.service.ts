@@ -7,12 +7,37 @@ import {environment} from '../../../environments/environment';
 })
 export class RestaurantDbService {
 
-  constructor(private httpClient: HttpClient) { 
-    console.log('RestaurantDbService Initialized');
+  setRestaurantsData: Function;
+
+  constructor(private httpClient: HttpClient) {
+    console.log('RestaurantDbService Initialized as SingleTon');
+  }
+
+  setRestaurantsHolder(cb) {
+    this.setRestaurantsData = cb;
   }
 
   getRestaurants(searchRestaurantType, pageIndex, orderBy) {
-    console.log('getRestaurants');
     return this.httpClient.get(`${environment.apiConf.url}/get-restaurants?type=${searchRestaurantType}&pageIndex=${pageIndex}&orderBy=${orderBy}`).toPromise();
+  }
+
+  getRestaurantsLongPoll() {
+    this.httpClient.get(`${environment.apiConf.url}/get-restaurants-longpoll`).toPromise()
+    .then((data:any) => {
+      this.setRestaurantsData(data.restaurants);
+    })  
+  }
+
+  trunkateRestaurants() {
+    this.httpClient.get(`${environment.apiConf.url}/trunkate-tables`).toPromise()
+    .then(() => {
+      return this.getRestaurants('',0,'SCORE');
+    })
+    .then((data:any) => {
+      this.setRestaurantsData(data.restaurants);
+    })
+    .catch(err => {
+      console.log(err);
+    }) 
   }
 }

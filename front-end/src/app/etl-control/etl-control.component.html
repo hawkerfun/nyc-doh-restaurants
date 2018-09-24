@@ -11,6 +11,7 @@
       <div class="mdl-card__actions button-row">
           <button mat-raised-button color="primary" (click)="startEtlRunner()" *ngIf="!isEtlJobRunning">Start ETL Job</button>
           <button mat-raised-button color="warn" (click)="stopEtlRunner()" *ngIf="isEtlJobRunning">Stop ETL Job</button>
+          <button mat-raised-button color="warn" (click)="trunkateTables()" *ngIf="!isEtlJobRunning">Trunkate Tables</button>
           <span class="mat-paginator-page-size" style="margin-top: 10px; vertical-align: middle; margin-left: -5px; float: right;"  *ngIf="isEtlJobRunning">
               <span class="mat-paginator-page-size-label">Items Proceeded By ETL:</span>
               <span class="ng-star-inserted">{{telProceedeLines}}</span>

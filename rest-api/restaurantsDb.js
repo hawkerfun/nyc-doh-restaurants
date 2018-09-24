@@ -13,8 +13,17 @@ module.exports.Restaurants = () => {
         return RestauransDB.getRestaturants(restaurantType, pageIndex, 20, orderBy);
     }
 
+    const trunkateTables = () => {
+        return Q.allSettled([
+            RestauransDB.truncateViolations(),
+            RestauransDB.truncateRest(),
+            RestauransDB.truncateInspections()    
+        ]);
+    }
+
     return {
-        getRestaturants: getRestaturants
+        getRestaturants: getRestaturants,
+        trunkateTables: trunkateTables
     }
 
 }
